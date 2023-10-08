@@ -1,15 +1,5 @@
-:root {
-  --primary-color: #cb997e;
-  --accent-color: #cb997e;
-  --secondary-color: white;
-  --text-color: white;
-  --btn-hover: #a5a58d;
-  --btn-disable: #424242;
-}
-
 * {
   margin: 0;
   padding: 0;
-  background-color: #121212;
   box-sizing: border-box;
 }
