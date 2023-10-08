@@ -8,9 +8,9 @@ import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-    <div className="App flex text-[#b8e0e2]">
+    <div className="App flex text-slate-600 font-bold">
       <NavBar />
-      <div className="w-[90%] bg-[#0F2220] h-screen overflow-auto">
+      <div className="w-[90%] bg-[#dcf8f5] h-screen overflow-auto">
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/exercises" element={<Exercises />} />
