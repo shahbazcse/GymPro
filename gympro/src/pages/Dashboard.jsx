@@ -11,13 +11,15 @@ function Dashboard() {
         just starting your fitness journey, this app is here to support you
         every step of the way. GymPro is more than just a fitness app, it's a
         comprehensive tool to help you lead a healthier, happier life.
-        <p className="mt-3">Start your journey to a better you today with GymPro!</p>
+        <p className="mt-3">
+          Start your journey to a better you today with GymPro!
+        </p>
       </div>
       <div className="flex flex-wrap justify-center items-center m-[4vh] gap-16 font-[poppins]">
-        <MetricCard />
-        <MetricCard />
-        <MetricCard />
-        <MetricCard />
+        <MetricCard bgColor={"#88D4CF"} />
+        <MetricCard bgColor={"#F1A868"} />
+        <MetricCard bgColor={"#7ECFDB"} />
+        <MetricCard bgColor={"#5349ca"} />
       </div>
     </div>
   );
