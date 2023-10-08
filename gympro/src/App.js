@@ -7,9 +7,9 @@ import Foods from "./pages/Foods";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App flex">
       <NavBar />
-      <div className="bg-red-400">
+      <div className="bg-slate-700 text-white w-[90%]">
         <Routes>
           <Route path="/exercises" element={<Exercises />} />
           <Route path="/goals" element={<Goals />} />
