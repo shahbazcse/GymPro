@@ -1,5 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Sintony&display=swap");
+
+:root {
+  --sintony: "Sintony";
+  ---poppins: "Poppins";
+}
+
 * {
   margin: 0;
   padding: 0;
+  letter-spacing: 1px;
   box-sizing: border-box;
 }

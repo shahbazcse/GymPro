@@ -5,7 +5,7 @@ function NavBar() {
   const navigate = useNavigate();
   const path = window.location.pathname;
   return (
-    <nav className="bg-[#223534] h-screen lg:w-[10%] pl-8 py-4 flex flex-col gap-4">
+    <nav className="bg-[#223534] h-screen lg:w-[10%] pl-8 py-4 flex flex-col gap-4 font-[sintony]">
       <div className="text-2xl font-bold my-4">GymPro</div>
       <div
         className={`cursor-pointer text-lg font-bold mt-8 px-8 py-4 rounded-l-full ${
