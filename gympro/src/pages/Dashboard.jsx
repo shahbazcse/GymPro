@@ -5,7 +5,7 @@ function Dashboard() {
   return (
     <div className="flex flex-col items-center">
       <div className="text-4xl w-full pl-20 pt-9 font-[sintony]">Dashboard</div>
-      <div className="text-lg mx-[12vh] lg:mx-[32vh] mt-8 font-[poppins]">
+      <div className="text-lg mx-[12vh] lg:mx-[32vh] mt-8 font-[poppins] text-slate-600">
         GymPro is your all-in-one fitness companion designed to help you achieve
         your health and wellness goals. Whether you're a seasoned athlete or
         just starting your fitness journey, this app is here to support you
@@ -16,10 +16,10 @@ function Dashboard() {
         </p>
       </div>
       <div className="flex flex-wrap justify-center items-center m-[4vh] gap-16 font-[poppins]">
-        <MetricCard bgColor={"#88D4CF"} />
-        <MetricCard bgColor={"#F1A868"} />
-        <MetricCard bgColor={"#7ECFDB"} />
-        <MetricCard bgColor={"#5349ca"} />
+        <MetricCard bgColor={"#7ECFDB"} bannerImg={""} />
+        <MetricCard bgColor={"#F1A868"} bannerImg={""} />
+        <MetricCard bgColor={"#7ECFDB"} bannerImg={""} />
+        <MetricCard bgColor={"#5349ca"} bannerImg={""} />
       </div>
     </div>
   );
