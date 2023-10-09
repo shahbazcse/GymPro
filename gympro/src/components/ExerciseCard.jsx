@@ -1,17 +1,30 @@
 import React from "react";
 
-function ExerciseCard() {
+function ExerciseCard({ exercise, action }) {
+  const { _id, name, duration, caloriesBurned, createdAt } = exercise;
+
+  const getDate = () => {
+    const date = new Date(createdAt);
+    const DD = date.getDate();
+    const MM = date.getMonth() + 1;
+    const YYYY = date.getFullYear();
+    return `${DD}/${MM}/${YYYY}`;
+  };
+
   return (
     <div className="bg-[#F1A868] :h-[24vh] w-[32vh] flex flex-col gap-2 justify-between rounded-xl rounded-br-none drop-shadow-md">
       <div className="flex flex-col gap-4 px-4 pt-4">
-        <h1 className="text-2xl">Exercise </h1>
+        <h1 className="text-2xl">{name}</h1>
         <div className="flex flex-col gap-3">
-          <p>Line 1</p>
-          <p>Line 2</p>
-          <p>Line 3</p>
+          <p>Duration: {duration} minutes</p>
+          <p>Calories Burned: {caloriesBurned}</p>
+          <p>Date added: {getDate()}</p>
         </div>
       </div>
-      <div className="flex ml-auto cursor-pointer bg-[#f09749cc] hover:bg-red-500 pt-4 pb-2 pl-4 pr-1 rounded-tl-full">
+      <div
+        onClick={() => action(_id)}
+        className="flex ml-auto cursor-pointer bg-[#f09749cc] hover:bg-red-500 pt-4 pb-2 pl-4 pr-1 rounded-tl-full"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"

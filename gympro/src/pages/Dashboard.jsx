@@ -20,10 +20,22 @@ function Dashboard() {
         </p>
       </div>
       <div className="flex flex-wrap justify-center items-center my-[4vh] mx-[16vh] gap-16 font-[poppins]">
-        <MetricCard bannerImg={img1} />
-        <MetricCard bannerImg={img2} />
-        <MetricCard bannerImg={img3} />
-        <MetricCard bannerImg={img4} />
+        <MetricCard
+          label={"Total Calories Burned"}
+          value={0}
+          bannerImg={img1}
+        />
+        <MetricCard
+          label={"Total Calories Consumed"}
+          value={0}
+          bannerImg={img2}
+        />
+        <MetricCard label={"Total Calories Goal"} value={0} bannerImg={img3} />
+        <MetricCard
+          label={"Remaining Calories to Goal"}
+          value={0}
+          bannerImg={img4}
+        />
       </div>
     </div>
   );

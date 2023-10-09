@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Modal({ modalData, setOpenModal, btnStyle }) {
+export default function Modal({ modalData, setOpenModal, action, btnStyle }) {
   const [data, setData] = useState({});
 
   const closeModal = (e) => {
@@ -55,6 +55,10 @@ export default function Modal({ modalData, setOpenModal, btnStyle }) {
             </div>
           </div>
           <button
+            onClick={() => {
+              action();
+              setOpenModal(false);
+            }}
             className={`${btnStyle} mx-auto px-12 py-2 rounded-full text-lg`}
           >
             Add

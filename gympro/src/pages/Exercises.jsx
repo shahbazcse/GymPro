@@ -1,10 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ExerciseCard from "../components/ExerciseCard";
 import Modal from "../components/modals/Modal";
+import {
+  addExercise,
+  deleteExercise,
+  getAllExercises,
+} from "../services/ExerciseService";
+import { useDispatch, useSelector } from "react-redux";
 
 function Exercises() {
+  const dispatch = useDispatch();
   const [openModal, setOpenModal] = useState(false);
   const [modalData, setModalData] = useState({});
+
+  const exercises = useSelector((state) => state.exercises);
+
+  const handleAddExercise = () => {
+    const exercise = {
+      name: "Test Exercise",
+      duration: 100,
+      caloriesBurned: 200,
+    };
+    dispatch(addExercise(exercise));
+  };
+
+  const handleDeleteExercise = (exerciseId) => {
+    dispatch(deleteExercise(exerciseId));
+  };
+
+  useEffect(() => {
+    dispatch(getAllExercises());
+  }, [dispatch]);
+
   return (
     <div className="flex flex-col items-center">
       <div className="text-4xl w-full pl-20 pt-9 font-[sintony]">Exercises</div>
@@ -31,21 +58,19 @@ function Exercises() {
         </svg>
       </div>
       <div className="flex flex-wrap justify-center items-center mx-[12vh] lg:mx-[28vh] my-[4vh] gap-16 font-[poppins]">
-        <ExerciseCard />
-        <ExerciseCard />
-        <ExerciseCard />
-        <ExerciseCard />
-        <ExerciseCard />
-        <ExerciseCard />
-        <ExerciseCard />
-        <ExerciseCard />
-        <ExerciseCard />
-        <ExerciseCard />
+        {exercises.map((exercise, index) => (
+          <ExerciseCard
+            key={index}
+            exercise={exercise}
+            action={handleDeleteExercise}
+          />
+        ))}
       </div>
       {openModal && (
         <Modal
           modalData={modalData}
           setOpenModal={setOpenModal}
+          action={handleAddExercise}
           btnStyle={"hover:bg-[#f09342] bg-[#F1A868]"}
         />
       )}
