@@ -2,9 +2,9 @@ import React from "react";
 
 function GoalCard() {
   return (
-    <div className="bg-[#5349ca] text-slate-200 h-[28vh] w-[32vh] flex flex-col gap-2 justify-between rounded-xl rounded-br-none drop-shadow-md">
+    <div className="bg-[#5349ca] text-slate-200 :h-[28vh] w-[32vh] flex flex-col gap-2 justify-between rounded-xl rounded-br-none drop-shadow-md">
       <div className="flex flex-col gap-4 px-4 pt-4">
-        <h1 className="text-2xl">Food </h1>
+        <h1 className="text-2xl">Goal </h1>
         <div className="flex flex-col gap-3">
           <p>Line 1</p>
           <p>Line 2</p>

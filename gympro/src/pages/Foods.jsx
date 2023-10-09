@@ -6,11 +6,10 @@ function Foods() {
     <div className="flex flex-col items-center">
       <div className="text-4xl w-full pl-20 pt-9 font-[sintony]">Foods</div>
       <div className="text-lg mx-[12vh] lg:mx-[32vh] mt-8 font-[poppins] text-slate-600">
-        Food Tracking is your personal nutrition companion, carefully crafted to
-        empower you with the knowledge and tools to make informed dietary
-        choices. Whether you're striving for weight management, muscle gain, or
-        simply want to eat healthier, this is your gateway to understanding and
-        optimizing your food intake.
+        Food Tracking is your personal nutrition companion, carefully crafted
+        tool to make informed dietary choices. Whether you're striving for
+        weight management, muscle gain, or simply want to eat healthier, this is
+        your gateway to understanding and optimizing your food intake.
       </div>
       <div className="flex gap-2 justify-center items-center mt-6 text-black hover:bg-[#52c6d8] bg-[#7ECFDB] rounded-full drop-shadow-md cursor-pointer">
         <span className="pl-4 py-3">Add Food </span>

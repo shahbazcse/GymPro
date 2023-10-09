@@ -2,7 +2,7 @@ import React from "react";
 
 function ExerciseCard() {
   return (
-    <div className="bg-[#F1A868] h-[24vh] w-[32vh] flex flex-col gap-2 justify-between rounded-xl rounded-br-none drop-shadow-md">
+    <div className="bg-[#F1A868] :h-[24vh] w-[32vh] flex flex-col gap-2 justify-between rounded-xl rounded-br-none drop-shadow-md">
       <div className="flex flex-col gap-4 px-4 pt-4">
         <h1 className="text-2xl">Exercise </h1>
         <div className="flex flex-col gap-3">

@@ -2,7 +2,7 @@ import React from "react";
 
 function FoodCard() {
   return (
-    <div className="bg-[#7ECFDB] h-[28vh] w-[32vh] flex flex-col gap-2 justify-between rounded-xl rounded-br-none drop-shadow-md">
+    <div className="bg-[#7ECFDB] :h-[28vh] w-[32vh] flex flex-col gap-2 justify-between rounded-xl rounded-br-none drop-shadow-md">
       <div className="flex flex-col gap-4 px-4 pt-4">
         <h1 className="text-2xl">Food </h1>
         <div className="flex flex-col gap-3">

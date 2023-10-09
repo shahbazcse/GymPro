@@ -1,5 +1,9 @@
 import React from "react";
 import MetricCard from "../components/MetricCard";
+import img1 from "../assets/01.svg";
+import img2 from "../assets/02.svg";
+import img3 from "../assets/03.svg";
+import img4 from "../assets/04.svg";
 
 function Dashboard() {
   return (
@@ -15,11 +19,11 @@ function Dashboard() {
           Start your journey to a better you today with GymPro!
         </p>
       </div>
-      <div className="flex flex-wrap justify-center items-center m-[4vh] gap-16 font-[poppins]">
-        <MetricCard bgColor={"#7ECFDB"} bannerImg={""} />
-        <MetricCard bgColor={"#F1A868"} bannerImg={""} />
-        <MetricCard bgColor={"#7ECFDB"} bannerImg={""} />
-        <MetricCard bgColor={"#5349ca"} bannerImg={""} />
+      <div className="flex flex-wrap justify-center items-center my-[4vh] mx-[16vh] gap-16 font-[poppins]">
+        <MetricCard bannerImg={img1} />
+        <MetricCard bannerImg={img2} />
+        <MetricCard bannerImg={img3} />
+        <MetricCard bannerImg={img4} />
       </div>
     </div>
   );
