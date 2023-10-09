@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import ExerciseCard from "../components/ExerciseCard";
+import Modal from "../components/modals/Modal";
 
 function Exercises() {
+  const [openModal, setOpenModal] = useState(false);
+  const [modalData, setModalData] = useState({});
   return (
     <div className="flex flex-col items-center">
       <div className="text-4xl w-full pl-20 pt-9 font-[sintony]">Exercises</div>
@@ -11,7 +14,10 @@ function Exercises() {
         into cardio, strength training, or yoga, it offers a seamless way to
         log, monitor, and optimize your fitness activities.
       </div>
-      <div className="flex gap-2 justify-center items-center mt-6 text-black hover:bg-[#f09342] bg-[#F1A868] rounded-full drop-shadow-md cursor-pointer">
+      <div
+        onClick={() => setOpenModal(true)}
+        className="flex gap-2 justify-center items-center mt-6 text-black hover:bg-[#f09342] bg-[#F1A868] rounded-full drop-shadow-md cursor-pointer"
+      >
         <span className="pl-4 py-3">Add Exercise </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +42,13 @@ function Exercises() {
         <ExerciseCard />
         <ExerciseCard />
       </div>
+      {openModal && (
+        <Modal
+          modalData={modalData}
+          setOpenModal={setOpenModal}
+          btnStyle={"hover:bg-[#f09342] bg-[#F1A868]"}
+        />
+      )}
     </div>
   );
 }

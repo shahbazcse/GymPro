@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import GoalCard from "../components/GoalCard";
+import Modal from "../components/modals/Modal";
 
 function Goals() {
+  const [openModal, setOpenModal] = useState(false);
+  const [modalData, setModalData] = useState({});
   return (
     <div className="flex flex-col items-center">
       <div className="text-4xl w-full pl-20 pt-9 font-[sintony]">Goals</div>
@@ -11,7 +14,10 @@ function Goals() {
         or simply lead a healthier lifestyle, this is your dedicated companion
         to set, monitor, and achieve your fitness aspirations.
       </div>
-      <div className="flex gap-2 justify-center items-center mt-6 text-slate-200 hover:bg-[#3e30d4] bg-[#5349ca] rounded-full drop-shadow-md cursor-pointer">
+      <div
+        onClick={() => setOpenModal(true)}
+        className="flex gap-2 justify-center items-center mt-6 text-slate-200 hover:bg-[#3e30d4] bg-[#5349ca] rounded-full drop-shadow-md cursor-pointer"
+      >
         <span className="pl-4 py-3">Add Goal </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +42,13 @@ function Goals() {
         <GoalCard />
         <GoalCard />
       </div>
+      {openModal && (
+        <Modal
+          modalData={modalData}
+          setOpenModal={setOpenModal}
+          btnStyle={"hover:bg-[#3e30d4] bg-[#5349ca] text-white"}
+        />
+      )}
     </div>
   );
 }

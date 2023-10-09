@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import FoodCard from "../components/FoodCard";
+import Modal from "../components/modals/Modal";
 
 function Foods() {
+  const [openModal, setOpenModal] = useState(false);
+  const [modalData, setModalData] = useState({});
   return (
     <div className="flex flex-col items-center">
       <div className="text-4xl w-full pl-20 pt-9 font-[sintony]">Foods</div>
@@ -11,7 +14,10 @@ function Foods() {
         weight management, muscle gain, or simply want to eat healthier, this is
         your gateway to understanding and optimizing your food intake.
       </div>
-      <div className="flex gap-2 justify-center items-center mt-6 text-black hover:bg-[#52c6d8] bg-[#7ECFDB] rounded-full drop-shadow-md cursor-pointer">
+      <div
+        onClick={() => setOpenModal(true)}
+        className="flex gap-2 justify-center items-center mt-6 text-black hover:bg-[#52c6d8] bg-[#7ECFDB] rounded-full drop-shadow-md cursor-pointer"
+      >
         <span className="pl-4 py-3">Add Food </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +42,13 @@ function Foods() {
         <FoodCard />
         <FoodCard />
       </div>
+      {openModal && (
+        <Modal
+          modalData={modalData}
+          setOpenModal={setOpenModal}
+          btnStyle={"hover:bg-[#52c6d8] bg-[#7ECFDB]"}
+        />
+      )}
     </div>
   );
 }
