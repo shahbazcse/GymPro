@@ -1,18 +1,22 @@
 import React, { useEffect } from "react";
-import MetricCard from "../components/MetricCard";
+import { useDispatch, useSelector } from "react-redux";
+
 import img1 from "../assets/01.svg";
 import img2 from "../assets/02.svg";
 import img3 from "../assets/03.svg";
 import img4 from "../assets/04.svg";
-import { useDispatch, useSelector } from "react-redux";
+
+import MetricCard from "../components/MetricCard";
+
+import { getAllExercises } from "../services/ExerciseService";
+import { getAllFoods } from "../services/FoodService";
+import { getAllGoals } from "../services/GoalService";
+
 import {
   totalCaloriesBurned,
   totalCaloriesConsumed,
   totalCaloriesGoal,
 } from "../services/DashboardService";
-import { getAllExercises } from "../services/ExerciseService";
-import { getAllFoods } from "../services/FoodService";
-import { getAllGoals } from "../services/GoalService";
 
 function Dashboard() {
   const dispatch = useDispatch();

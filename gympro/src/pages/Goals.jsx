@@ -7,18 +7,11 @@ import { addGoal, deleteGoal, getAllGoals } from "../services/GoalService";
 function Goals() {
   const dispatch = useDispatch();
   const [openModal, setOpenModal] = useState(false);
-  const [modalData, setModalData] = useState({});
 
   const goals = useSelector((state) => state.goals);
 
-  const handleAddGoal = () => {
-    const goal = {
-      name: "Test Goal",
-      description: "Test Description Again",
-      targetDate: new Date(),
-      targetCalories: 100,
-      status: "Incomplete",
-    };
+  const handleAddGoal = (goal) => {
+    console.log(goal);
     dispatch(addGoal(goal));
   };
 
@@ -62,10 +55,10 @@ function Goals() {
       </div>
       {openModal && (
         <Modal
-          modalData={modalData}
           setOpenModal={setOpenModal}
           action={handleAddGoal}
-          btnStyle={"hover:bg-[#3e30d4] bg-[#5349ca] text-white"}
+          formType={"Goal"}
+          btnStyle={"hover:bg-[#3e30d4] bg-[#5349ca] text-white cursor-pointer"}
         />
       )}
     </div>

@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import ExerciseForm from "./forms/ExerciseForm";
+import FoodForm from "./forms/FoodForm";
+import GoalForm from "./forms/GoalForm";
 
-export default function Modal({ modalData, setOpenModal, action, btnStyle }) {
-  const [data, setData] = useState({});
-
+export default function Modal({ setOpenModal, action, formType, btnStyle }) {
   const closeModal = (e) => {
     e.target.id === "blur-area" && setOpenModal(false);
   };
@@ -13,11 +13,11 @@ export default function Modal({ modalData, setOpenModal, action, btnStyle }) {
       onClick={(e) => closeModal(e)}
       className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex flex-col items-center justify-center"
     >
-      <div className="bg-white rounded-lg mx-[6vh] h-[28rem] w-[42vh] lg:mx-[36vh] overflow-auto">
-        <div className="flex justify-end sticky top-0 z-10 drop-shadow-md opacity-[0.85] bg-white cursor-pointer border-b border-gray-100 text-white text-right px-4 py-2 rounded-t-lg">
+      <div className="bg-white rounded-lg mx-[6vh] w-[42vh] lg:mx-[36vh]">
+        <div className="flex justify-end sticky top-0 z-10 drop-shadow-md opacity-[0.85] bg-white border-b border-gray-100 text-white text-right px-4 py-2 rounded-t-lg">
           <div
             onClick={() => setOpenModal(false)}
-            className="border-2 p-1 border-gray-300 rounded-full hover:bg-gray-400"
+            className="border-2 p-1 border-gray-300 rounded-full hover:bg-gray-400 cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -32,37 +32,25 @@ export default function Modal({ modalData, setOpenModal, action, btnStyle }) {
           </div>
         </div>
         <div className="flex flex-col mx-8 mt-8 mb-4 gap-8">
-          <div className="flex flex-col justify-end items-center gap-4 font-[poppins]">
-            <div className="flex items-center text-xl">
-              <div className="w-[14vh]">Field 1</div>
-              <input type="text" className="border-2 p-1 w-[18vh] rounded-md" />
-            </div>
-            <div className="flex items-center text-xl">
-              <div className="w-[14vh]">Field 2</div>
-              <input type="text" className="border-2 p-1 w-[18vh] rounded-md" />
-            </div>
-            <div className="flex items-center text-xl">
-              <div className="w-[14vh]">Field 3</div>
-              <input type="text" className="border-2 p-1 w-[18vh] rounded-md" />
-            </div>
-            <div className="flex items-center text-xl">
-              <div className="w-[14vh]">Field 4</div>
-              <input type="text" className="border-2 p-1 w-[18vh] rounded-md" />
-            </div>
-            <div className="flex items-center text-xl">
-              <div className="w-[14vh]">Field 5</div>
-              <input type="text" className="border-2 p-1 w-[18vh] rounded-md" />
-            </div>
-          </div>
-          <button
-            onClick={() => {
-              action();
-              setOpenModal(false);
-            }}
-            className={`${btnStyle} mx-auto px-12 py-2 rounded-full text-lg`}
-          >
-            Add
-          </button>
+          {formType === "Exercise" ? (
+            <ExerciseForm
+              action={action}
+              setOpenModal={setOpenModal}
+              btnStyle={btnStyle}
+            />
+          ) : formType === "Goal" ? (
+            <GoalForm
+              action={action}
+              setOpenModal={setOpenModal}
+              btnStyle={btnStyle}
+            />
+          ) : (
+            <FoodForm
+              action={action}
+              setOpenModal={setOpenModal}
+              btnStyle={btnStyle}
+            />
+          )}
         </div>
       </div>
     </div>

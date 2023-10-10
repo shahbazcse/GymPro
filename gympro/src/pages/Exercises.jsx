@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ExerciseCard from "../components/ExerciseCard";
 import Modal from "../components/modals/Modal";
 import {
@@ -6,21 +7,14 @@ import {
   deleteExercise,
   getAllExercises,
 } from "../services/ExerciseService";
-import { useDispatch, useSelector } from "react-redux";
 
 function Exercises() {
   const dispatch = useDispatch();
   const [openModal, setOpenModal] = useState(false);
-  const [modalData, setModalData] = useState({});
 
   const exercises = useSelector((state) => state.exercises);
 
-  const handleAddExercise = () => {
-    const exercise = {
-      name: "Test Exercise",
-      duration: 100,
-      caloriesBurned: 200,
-    };
+  const handleAddExercise = (exercise) => {
     dispatch(addExercise(exercise));
   };
 
@@ -68,9 +62,9 @@ function Exercises() {
       </div>
       {openModal && (
         <Modal
-          modalData={modalData}
           setOpenModal={setOpenModal}
           action={handleAddExercise}
+          formType={"Exercise"}
           btnStyle={"hover:bg-[#f09342] bg-[#F1A868]"}
         />
       )}
