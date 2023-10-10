@@ -29,7 +29,7 @@ const deleteExercise = (exerciseId) => async (dispatch) => {
   try {
     const response = await axios.delete(`${api}/exercises/${exerciseId}`);
     if (response.status === 200) {
-      dispatch({ type: "FETCH_EXERCISES", payload: response.data.exercises });
+      dispatch({ type: "DELETE_EXERCISE", payload: exerciseId });
     }
   } catch (error) {
     dispatch({ type: "SERVER_ERROR" });

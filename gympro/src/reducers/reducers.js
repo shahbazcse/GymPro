@@ -25,7 +25,22 @@ const AppReducer = (state = initialState, action) => {
     case "DELETE_EXERCISE":
       return {
         ...state,
-        exercises: action.payload,
+        exercises: state.exercises.filter(({ _id }) => _id !== action.payload),
+      };
+    case "FETCH_GOALS":
+      return {
+        ...state,
+        goals: action.payload,
+      };
+    case "ADD_GOAL":
+      return {
+        ...state,
+        goals: [...state.goals, action.payload],
+      };
+    case "DELETE_GOAL":
+      return {
+        ...state,
+        goals: state.goals.filter(({ _id }) => _id !== action.payload),
       };
     case "INTIATE_LOADER":
       return {

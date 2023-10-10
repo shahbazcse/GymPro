@@ -1,10 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import GoalCard from "../components/GoalCard";
 import Modal from "../components/modals/Modal";
+import { useDispatch, useSelector } from "react-redux";
+import { addGoal, deleteGoal, getAllGoals } from "../services/GoalService";
 
 function Goals() {
+  const dispatch = useDispatch();
   const [openModal, setOpenModal] = useState(false);
   const [modalData, setModalData] = useState({});
+
+  const goals = useSelector((state) => state.goals);
+
+  const handleAddGoal = () => {
+    const goal = {
+      name: "Test Goal",
+      description: "Test Desciption",
+      targetDate: new Date(),
+      targetCalories: 100,
+      status: "Incomplete",
+    };
+    dispatch(addGoal(goal));
+  };
+
+  const handleDeleteGoal = (goalId) => {
+    dispatch(deleteGoal(goalId));
+  };
+
+  useEffect(() => {
+    dispatch(getAllGoals());
+  }, [dispatch]);
+
   return (
     <div className="flex flex-col items-center">
       <div className="text-4xl w-full pl-20 pt-9 font-[sintony]">Goals</div>
@@ -31,21 +56,15 @@ function Goals() {
         </svg>
       </div>
       <div className="flex flex-wrap justify-center items-center mx-[12vh] lg:mx-[28vh] my-[4vh] gap-16 font-[poppins]">
-        <GoalCard />
-        <GoalCard />
-        <GoalCard />
-        <GoalCard />
-        <GoalCard />
-        <GoalCard />
-        <GoalCard />
-        <GoalCard />
-        <GoalCard />
-        <GoalCard />
+        {goals.map((goal, index) => (
+          <GoalCard key={index} goal={goal} action={handleDeleteGoal} />
+        ))}
       </div>
       {openModal && (
         <Modal
           modalData={modalData}
           setOpenModal={setOpenModal}
+          action={handleAddGoal}
           btnStyle={"hover:bg-[#3e30d4] bg-[#5349ca] text-white"}
         />
       )}
