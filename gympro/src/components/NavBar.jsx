@@ -7,13 +7,17 @@ import { GiMeal } from "react-icons/gi";
 import { BsGithub } from "react-icons/bs";
 import { ImTwitter } from "react-icons/im";
 import { BsLinkedin } from "react-icons/bs";
+import logo from "../assets/logo.png";
 
 function NavBar() {
   const navigate = useNavigate();
   const path = window.location.pathname;
   return (
     <nav className="bg-[#FFFFFF] text-slate-600 h-screen lg:w-[15%] p-8 py-4 flex flex-col gap-4 font-[sintony]">
-      <div className="text-2xl font-bold my-4">GymPro</div>
+      <div className="flex items-center justify-center gap-2 text-2xl font-bold my-4">
+        <img src={logo} alt="Logo" className="h-10 w-10" />
+        <p className="text-black tracking-wider">GymPro</p>
+      </div>
       <div
         className={`flex gap-3 items-center cursor-pointer text-lg font-bold mt-8 px-8 py-4 rounded-full ${
           path === "/" ? "bg-[#dcf8f5]" : "hover:bg-[#F3FBFA]"
@@ -59,13 +63,25 @@ function NavBar() {
         Foods
       </div>
       <div className="flex items-center justify-center gap-8 fixed bottom-0 px-7 my-12">
-        <a href="https://github.com/shahbazcse/GymPro" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/shahbazcse/GymPro"
+          target="_blank"
+          rel="noreferrer"
+        >
           <BsGithub className="h-7 w-7 cursor-pointer text-[#88d4cd] hover:text-black" />
         </a>
-        <a href="https://twitter.com/shahbaz_cse" target="_blank" rel="noreferrer">
+        <a
+          href="https://twitter.com/shahbaz_cse"
+          target="_blank"
+          rel="noreferrer"
+        >
           <ImTwitter className="h-7 w-7 cursor-pointer text-[#88d4cd] hover:text-blue-400" />
         </a>
-        <a href="https://www.linkedin.com/in/shahbazcse/" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.linkedin.com/in/shahbazcse/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <BsLinkedin className="h-7 w-7 cursor-pointer text-[#88d4cd] hover:text-blue-600" />
         </a>
       </div>
