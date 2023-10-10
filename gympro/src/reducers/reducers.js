@@ -2,10 +2,6 @@ const initialState = {
   exercises: [],
   goals: [],
   foods: [],
-  totalCaloriesBurned: 0,
-  totalCaloriesConsumed: 0,
-  totalCaloriesGoal: 0,
-  remainingCalorieGoal: 0,
   loading: false,
   error: null,
 };
