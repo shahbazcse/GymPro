@@ -5,7 +5,9 @@ const getAllGoals = () => async (dispatch) => {
   try {
     dispatch({ type: "INTIATE_LOADER" });
     const response = await axios.get(`${api}/goals`);
-    dispatch({ type: "FETCH_GOALS", payload: response.data.goals });
+    if (response.status === 200) {
+      dispatch({ type: "FETCH_GOALS", payload: response.data.goals });
+    }
     dispatch({ type: "INTIATE_LOADER" });
   } catch (error) {
     dispatch({ type: "SERVER_ERROR" });

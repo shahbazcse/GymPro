@@ -5,7 +5,9 @@ const getAllExercises = () => async (dispatch) => {
   try {
     dispatch({ type: "INTIATE_LOADER" });
     const response = await axios.get(`${api}/exercises`);
-    dispatch({ type: "FETCH_EXERCISES", payload: response.data.exercises });
+    if (response.status === 200) {
+      dispatch({ type: "FETCH_EXERCISES", payload: response.data.exercises });
+    }
     dispatch({ type: "INTIATE_LOADER" });
   } catch (error) {
     dispatch({ type: "SERVER_ERROR" });

@@ -5,7 +5,9 @@ const getAllFoods = () => async (dispatch) => {
   try {
     dispatch({ type: "INITIATE_LOADER" });
     const response = await axios.get(`${api}/food`);
-    dispatch({ type: "FETCH_FOODS", payload: response.data.foods });
+    if (response.status === 200) {
+      dispatch({ type: "FETCH_FOODS", payload: response.data.foods });
+    }
     dispatch({ type: "INITIATE_LOADER" });
   } catch (error) {
     dispatch({ type: "SERVER_ERROR" });
