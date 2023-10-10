@@ -1,10 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FoodCard from "../components/FoodCard";
 import Modal from "../components/modals/Modal";
+import { useDispatch, useSelector } from "react-redux";
+import { addFood, deleteFood, getAllFoods } from "../services/FoodService";
 
 function Foods() {
+  const dispatch = useDispatch();
   const [openModal, setOpenModal] = useState(false);
   const [modalData, setModalData] = useState({});
+
+  const foods = useSelector((state) => state.foods);
+
+  const handleAddFood = () => {
+    const food = {
+      name: "test food",
+      calories: 0,
+      protein: 0,
+      carbohydrates: 0,
+      fat: 0,
+    };
+    dispatch(addFood(food));
+  };
+
+  const handleDeleteFood = (foodId) => {
+    dispatch(deleteFood(foodId));
+  };
+
+  useEffect(() => {
+    dispatch(getAllFoods());
+  }, [dispatch]);
+
   return (
     <div className="flex flex-col items-center">
       <div className="text-4xl w-full pl-20 pt-9 font-[sintony]">Foods</div>
@@ -31,21 +56,15 @@ function Foods() {
         </svg>
       </div>
       <div className="flex flex-wrap justify-center items-center mx-[12vh] lg:mx-[28vh] my-[4vh] gap-16 font-[poppins]">
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
+        {foods.map((food, index) => (
+          <FoodCard key={index} food={food} action={handleDeleteFood} />
+        ))}
       </div>
       {openModal && (
         <Modal
           modalData={modalData}
           setOpenModal={setOpenModal}
+          action={handleAddFood}
           btnStyle={"hover:bg-[#52c6d8] bg-[#7ECFDB]"}
         />
       )}

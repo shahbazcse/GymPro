@@ -42,7 +42,22 @@ const AppReducer = (state = initialState, action) => {
         ...state,
         goals: state.goals.filter(({ _id }) => _id !== action.payload),
       };
-    case "INTIATE_LOADER":
+    case "FETCH_FOODS":
+      return {
+        ...state,
+        foods: action.payload,
+      };
+    case "ADD_FOOD":
+      return {
+        ...state,
+        foods: [...state.foods, action.payload],
+      };
+    case "DELETE_FOOD":
+      return {
+        ...state,
+        foods: state.foods.filter(({ _id }) => _id !== action.payload),
+      };
+    case "INITIATE_LOADER":
       return {
         ...state,
         loading: !state.loading,

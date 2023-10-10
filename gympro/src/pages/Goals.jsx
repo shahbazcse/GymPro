@@ -14,7 +14,7 @@ function Goals() {
   const handleAddGoal = () => {
     const goal = {
       name: "Test Goal",
-      description: "Test Desciption",
+      description: "Test Description Again",
       targetDate: new Date(),
       targetCalories: 100,
       status: "Incomplete",
