@@ -37,7 +37,7 @@ function Exercises() {
       </div>
       <div
         onClick={() => setOpenModal(true)}
-        className="flex gap-2 justify-center items-center mt-6 text-black hover:bg-[#f09342] bg-[#F1A868] rounded-full drop-shadow-md cursor-pointer"
+        className="flex gap-2 justify-center items-center mt-6 text-black hover:bg-[#eea86b] bg-[#f0bb8c] rounded-full drop-shadow-md cursor-pointer"
       >
         <span className="pl-4 py-3">Add Exercise </span>
         <svg
@@ -65,7 +65,7 @@ function Exercises() {
           setOpenModal={setOpenModal}
           action={handleAddExercise}
           formType={"Exercise"}
-          btnStyle={"hover:bg-[#f09342] bg-[#F1A868]"}
+          btnStyle={"hover:bg-[#eea86b] bg-[#f0bb8c]"}
         />
       )}
     </div>

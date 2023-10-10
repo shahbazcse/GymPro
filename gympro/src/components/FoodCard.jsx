@@ -5,12 +5,20 @@ function FoodCard({ food, action }) {
   return (
     <div className="bg-[#7ECFDB] :h-[28vh] w-[32vh] flex flex-col gap-2 justify-between rounded-xl rounded-br-none drop-shadow-md">
       <div className="flex flex-col gap-4 px-4 pt-4">
-        <h1 className="text-2xl">{name} </h1>
+        <h1 className="text-2xl tracking-wider">{name} </h1>
         <div className="flex flex-col gap-3">
-          <p>Calories: {calories}</p>
-          <p>Protein: {protein}g</p>
-          <p>Carbs: {carbohydrates}g</p>
-          <p>Fat: {fat}g</p>
+          <p>
+            <span className="text-slate-600">Calories:</span> {calories}
+          </p>
+          <p>
+            <span className="text-slate-600">Protein:</span> {protein}g
+          </p>
+          <p>
+            <span className="text-slate-600">Carbs:</span> {carbohydrates}g
+          </p>
+          <p>
+            <span className="text-slate-600">Fat:</span> {fat}g
+          </p>
         </div>
       </div>
       <div

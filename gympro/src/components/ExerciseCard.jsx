@@ -12,18 +12,25 @@ function ExerciseCard({ exercise, action }) {
   };
 
   return (
-    <div className="bg-[#F1A868] :h-[24vh] w-[32vh] flex flex-col gap-2 justify-between rounded-xl rounded-br-none drop-shadow-md">
+    <div className="bg-[#f0bb8c] :h-[24vh] w-[32vh] flex flex-col gap-2 justify-between rounded-xl rounded-br-none drop-shadow-md">
       <div className="flex flex-col gap-4 px-4 pt-4">
-        <h1 className="text-2xl">{name}</h1>
+        <h1 className="text-2xl tracking-wider">{name}</h1>
         <div className="flex flex-col gap-3">
-          <p>Duration: {duration} minutes</p>
-          <p>Calories Burned: {caloriesBurned}</p>
-          <p>Date added: {getDate()}</p>
+          <p>
+            <span className="text-slate-700">Duration:</span> {duration} minutes
+          </p>
+          <p>
+            <span className="text-slate-700">Calories Burned:</span>{" "}
+            {caloriesBurned}
+          </p>
+          <p>
+            <span className="text-slate-700">Date added:</span> {getDate()}
+          </p>
         </div>
       </div>
       <div
         onClick={() => action(_id)}
-        className="flex ml-auto cursor-pointer bg-[#f09749cc] hover:bg-red-500 pt-4 pb-2 pl-4 pr-1 rounded-tl-full"
+        className="flex ml-auto cursor-pointer bg-[#eea86b] hover:bg-red-500 pt-4 pb-2 pl-4 pr-1 rounded-tl-full"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

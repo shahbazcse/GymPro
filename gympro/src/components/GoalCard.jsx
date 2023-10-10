@@ -12,19 +12,19 @@ function GoalCard({ goal, action }) {
   };
 
   return (
-    <div className="bg-[#5349ca] text-slate-200 :h-[28vh] w-[32vh] flex flex-col gap-2 justify-between rounded-xl rounded-br-none drop-shadow-md">
+    <div className="bg-[#6c63ce] text-slate-200 :h-[28vh] w-[32vh] flex flex-col gap-2 justify-between rounded-xl rounded-br-none drop-shadow-md">
       <div className="flex flex-col gap-4 px-4 pt-4">
-        <h1 className="text-2xl">{name} </h1>
+        <h1 className="text-2xl tracking-wider">{name} </h1>
         <div className="flex flex-col gap-3">
-          <p>Description: {description}</p>
-          <p>Target Calories: {targetCalories}</p>
-          <p>Target Date: {getDate()}</p>
-          <p>Status: {status}</p>
+          <p><span className="text-slate-300">Description:</span> {description}</p>
+          <p><span className="text-slate-300">Target Calories:</span> {targetCalories}</p>
+          <p><span className="text-slate-300">Target Date:</span> {getDate()}</p>
+          <p><span className="text-slate-300">Status:</span> {status}</p>
         </div>
       </div>
       <div
         onClick={() => action(_id)}
-        className="flex ml-auto cursor-pointer bg-[#3e30d486] hover:bg-red-500 pt-4 pb-2 pl-4 pr-1 rounded-tl-full"
+        className="flex ml-auto cursor-pointer bg-[#5d53ce] hover:bg-red-500 pt-4 pb-2 pl-4 pr-1 rounded-tl-full"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -34,7 +34,7 @@ function Goals() {
       </div>
       <div
         onClick={() => setOpenModal(true)}
-        className="flex gap-2 justify-center items-center mt-6 text-slate-200 hover:bg-[#3e30d4] bg-[#5349ca] rounded-full drop-shadow-md cursor-pointer"
+        className="flex gap-2 justify-center items-center mt-6 text-slate-200 hover:bg-[#5d53ce] bg-[#6c63ce] rounded-full drop-shadow-md cursor-pointer"
       >
         <span className="pl-4 py-3">Add Goal </span>
         <svg
@@ -58,7 +58,7 @@ function Goals() {
           setOpenModal={setOpenModal}
           action={handleAddGoal}
           formType={"Goal"}
-          btnStyle={"hover:bg-[#3e30d4] bg-[#5349ca] text-white cursor-pointer"}
+          btnStyle={"hover:bg-[#5d53ce] bg-[#6c63ce] text-white"}
         />
       )}
     </div>
