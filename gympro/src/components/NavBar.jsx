@@ -59,13 +59,13 @@ function NavBar() {
         Foods
       </div>
       <div className="flex items-center justify-center gap-8 fixed bottom-0 px-7 my-12">
-        <a href="https://github.com/shahbazcse/GymPro" target="_blank">
+        <a href="https://github.com/shahbazcse/GymPro" target="_blank" rel="noreferrer">
           <BsGithub className="h-7 w-7 cursor-pointer text-[#88d4cd] hover:text-black" />
         </a>
-        <a href="https://twitter.com/shahbaz_cse" target="_blank">
+        <a href="https://twitter.com/shahbaz_cse" target="_blank" rel="noreferrer">
           <ImTwitter className="h-7 w-7 cursor-pointer text-[#88d4cd] hover:text-blue-400" />
         </a>
-        <a href="https://www.linkedin.com/in/shahbazcse/" target="_blank">
+        <a href="https://www.linkedin.com/in/shahbazcse/" target="_blank" rel="noreferrer">
           <BsLinkedin className="h-7 w-7 cursor-pointer text-[#88d4cd] hover:text-blue-600" />
         </a>
       </div>

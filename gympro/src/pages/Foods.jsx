@@ -7,7 +7,6 @@ import { addFood, deleteFood, getAllFoods } from "../services/FoodService";
 function Foods() {
   const dispatch = useDispatch();
   const [openModal, setOpenModal] = useState(false);
-  const [modalData, setModalData] = useState({});
 
   const foods = useSelector((state) => state.foods);
 
@@ -62,7 +61,6 @@ function Foods() {
       </div>
       {openModal && (
         <Modal
-          modalData={modalData}
           setOpenModal={setOpenModal}
           action={handleAddFood}
           btnStyle={"hover:bg-[#52c6d8] bg-[#7ECFDB]"}
