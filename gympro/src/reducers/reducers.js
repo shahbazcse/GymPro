@@ -30,7 +30,7 @@ const AppReducer = (state = initialState, action) => {
     case "INTIATE_LOADER":
       return {
         ...state,
-        loading: state.loading ? false : true,
+        loading: !state.loading,
       };
     case "SERVER_ERROR":
       return {
