@@ -1,5 +1,5 @@
 import axios from "axios";
-const api = "https://gymprobackend.shahbazahmad12.repl.co";
+const api = "https://gym-pro-backend.vercel.app";
 
 const getAllFoods = () => async (dispatch) => {
   try {
